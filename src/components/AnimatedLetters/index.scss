@@ -1,0 +1,33 @@
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 1s 1s forwards; 
+    min-width: 10px;
+}
+
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+        animation: flash 1s;
+        color: #ffd700
+    }
+}
+
+@for $i from 1 through 41 {
+    .text-animate._#{$i} {
+        animation-delay: #{$i / 10}s;
+    }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
